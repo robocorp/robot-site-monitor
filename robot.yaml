@@ -1,0 +1,12 @@
+tasks:
+  Monitor Sites:
+    robotTaskName: Monitor Sites
+
+condaConfigFile: conda.yaml
+artifactsDir: output
+PATH:
+  - .
+PYTHONPATH:
+  - .
+ignoreFiles:
+    - .gitignore
