@@ -15,7 +15,7 @@ Ping Server
 *** Tasks ***
 Monitor sites
     ${report}=  Create List
-    Set Work Item Variable  ping_report  ${report}
+    Set Work Item Variable  site_report  ${report}
 
     ${envs}=  Get Environment Variables
     FOR  ${key}  ${value}  IN ZIP  ${envs.keys()}  ${envs.values()}

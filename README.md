@@ -6,9 +6,9 @@ Configure monitored URLs by adding them as environment variables with names star
     MON_ROBOCORP=https://robocorp.com
     MON_PYTHON=https://python.org
 
-When robot completes Work Item variables ```ping_report```contains a list of results:
+When robot completes Work Item variables ```site_report```contains a list of results:
 
-    ping_report = [
+    site_report = [
       "https://robocorp.com 200",
       "https://python.org 200"
     ]
