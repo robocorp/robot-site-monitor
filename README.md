@@ -14,4 +14,4 @@ When robot completes Work Item variables ```site_report```contains a list of res
     ]
 
 If you want to send the results to slack, you can configure ```robot-slack-notifier``` as the next step in Robocorp cloud process.
-You can use e.g. ```MESSAGE="\n".join(ping_report)```
+You can use e.g. ```MESSAGE="\n".join(site_report)```
