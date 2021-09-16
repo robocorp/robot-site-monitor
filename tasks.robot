@@ -3,12 +3,12 @@ Library           Collections
 Library           OperatingSystem
 Library           String
 Library           RPA.HTTP
-Library           RPA.Robocloud.Items
+Library           RPA.Robocorp.WorkItems
 
 *** Keywords ***
 Ping Server
     [Arguments]    ${url}    ${report}
-    ${response}=    HTTP Get    ${url}
+    ${response}=    GET    ${url}
     Append To List    ${report}    ${url} ${response.status_code}
 
 *** Tasks ***
