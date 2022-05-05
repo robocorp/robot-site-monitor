@@ -1,9 +1,10 @@
 *** Settings ***
-Library           Collections
-Library           String
-Library           OperatingSystem
-Library           RPA.HTTP
-Library           RPA.Robocorp.WorkItems
+Library     Collections
+Library     OperatingSystem
+Library     String
+Library     RPA.HTTP
+Library     RPA.Robocorp.WorkItems
+
 
 *** Tasks ***
 Monitor sites
@@ -11,15 +12,14 @@ Monitor sites
     Set Work Item Variable    site_report    ${report}
     ${envs}=    Get Environment Variables
     FOR    ${key}    ${value}    IN ZIP    ${envs.keys()}    ${envs.values()}
-        ${MON}    Split String    ${key}    _    1
-        IF    '${MON}[0]'=='MON'
-            Ping Server    ${value}    ${report}
-        END
+        ${MON}=    Split String    ${key}    _    1
+        IF    '${MON}[0]'=='MON'    Ping server    ${value}    ${report}
     END
     Save Work Item
 
+
 *** Keywords ***
-Ping Server
+Ping server
     [Arguments]    ${url}    ${report}
     ${response}=    GET    ${url}
     Append To List    ${report}    ${url} ${response.status_code}
